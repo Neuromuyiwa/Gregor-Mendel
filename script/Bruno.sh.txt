@@ -1,0 +1,96 @@
+mkdir Bruno_Chikere
+pwd
+cd Bruno_Chikere
+pwd
+mkdir biocomputing && cd $_
+pwd
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
+ls -lh
+mv 'wildtype.fna'../Bruno_Chikere
+mv 'wildtype.fna' Bruno_Chikere
+cd Bruno_Chikere
+pwd
+ls -lh
+mkdir ../Bruno_Chikere
+mv 'wildtype.fna' ../Bruno_Chikere
+pwd
+cd ../Bruno_Chikere
+ls
+ls -lh
+mv 'wildtype.fna' ../Bruno_Chikere
+cd biocomputing
+cd ../biocomputing
+ls -lh
+rm 'wildtype.gbk'../biocomputing
+rm 'wildtype.gbk'
+ls -lh
+rm Bruno_Chikere
+wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna
+ls -lh
+cd ..
+ls
+cd Bruno_Chikere
+mv 'wildtype.fna' Bruno_Chikere
+cd ..
+mv biocomputing/wildtype.fna Bruno_Chikere
+ls -lh
+ls
+cd Bruno_Chikere
+ls
+grep -E "tata" wildtype.fna
+grep -E "tatatata" wildtype.fna
+grep -E "tatatata" wildtype.fna > mutant_lines.txt
+cat mutant_lines.txt
+wget https://www.ncbi.nlm.nih.gov/nuccore/NC_060930.1from=52630148&to=52642586&report=fasta&strand=true> GSTA1.fasta
+grep -v '>' your_gene.fasta | wc -l
+grep -v '>' GSTA1.fasta | wc -l
+grep -v '>' GSTA1.fasta | grep -o A | wc -l
+wget https://www.ncbi.nlm.nih.gov/nuccore/NC_060930.1report=fasta&log$=seqview&format=text&from=52630148&to=52642586&strand=true
+wget https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgidb=nuccore&id=2938&rettype=fasta&retmode=text > GSTA1.fasta
+pwd
+grep -v '>' GSTA1.fasta | wc -l
+wget https://www.ncbi.nlm.nih.gov/gene/2938> GSTA1.fasta
+grep -v '>' GSTA1.fasta | wc -l
+wget -O GSTA1.fasta https://www.ncbi.nlm.nih.gov/nuccore/NC_060930.1from=52630148&to=52642586&report=fasta&strand=true
+pwd
+wget -O GSTA1.fasta https://www.ncbi.nlm.nih.gov/gene/2938
+nano GSTA1.fasta
+cat GSTA1.fasta
+grep -v "^>" GSTA1.fasta | wc -l
+grep -o 'A' GSTA1.fasta | wc -l
+grep -o 'G' GSTA1.fasta | wc -l
+grep -o 'C' GSTA1.fasta | wc -l
+grep -o 'T' GSTA1.fasta | wc -l
+sed -n '/^>/!p' GSTA1.fasta > sequence.txt
+GC_count=$(grep -o -i '[GC]' sequence.txt | wc -l)
+total_nucleotides=$(cat sequence.txt | tr -d '\n' | wc -c)
+GC_content=$(echo "scale=2; $GC_count / $total_nucleotides * 100" | bc)
+echo "GC content: $GC_content%"
+GC_content=$(($(grep -v '>' your_gene.fasta | grep -o -E "C|G" | wc -l) * 100 / $(grep -v '>' your_gene.fasta | wc -l))) ; echo "GC content: $GC_content%"
+GC_content=$(($(grep -v '>' GSTA1.fasta | grep -o -E "C|G" | wc -l) * 100 / $(grep -v '>' GSTA1.fasta | wc -l))) ; echo "GC content: $GC_content%"
+touch Bruno.nt
+history
+touch Bruno.nt
+echo "A: $(grep -v '>' your_gene.fasta | grep -o A | wc -l)" >> Bruno.nt
+echo "A: $(grep -v '>' GSTA1.fasta | grep -o A | wc -l)" >> Bruno.nt
+ls
+cd Bruno
+ls
+cd ..
+cd Bruno_Chikere
+ls
+cd Bruno_Chikere
+ls
+echo "A: $(grep -v '>' your_gene.fasta | grep -o A | wc -l)" >> Bruno.nt
+echo "A: $(grep -v '>' GSTA1.fasta | grep -o A | wc -l)" >> Bruno.nt
+touch Bruno.nt
+nano Bruno.nt
+echo "G: $(grep -v '>' GSTA1.fasta | grep -o G | wc -l)" >> Bruno.nt
+nano Bruno.nt
+echo "T: $(grep -v '>' GSTA1.fasta | grep -o T | wc -l)" >> Bruno.nt
+nano Bruno.nt
+echo "C: $(grep -v '>' GSTA1.fasta | grep -o C | wc -l)" >> Bruno.nt
+nano Bruno.nt
+nano Bruno.sh
+history
