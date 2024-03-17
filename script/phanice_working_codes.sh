@@ -187,11 +187,11 @@ $ wget -O hemoglobin.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch
 wget -O hemoglobin.fasta "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=NC_000011.10
 &rettype=fasta&retmode=text"
 cat hemoglobin.fasta
-grep -o 'A' hemoglobin.fasta | wc -l
-grep -o 'G' hemoglobin.fasta | wc -l
-grep -o 'C' hemoglobin.fasta | wc -l
-grep -o 'T' hemoglobin.fasta | wc -l
-tail -n +2 hemoglobin.fasta | wc -l
+grep -c 'A' hemoglobin.fasta 
+grep -c 'G' hemoglobin.fasta 
+grep -c 'C' hemoglobin.fasta 
+grep -c 'T' hemoglobin.fasta 
+tail -n +2 hemoglobin.fasta 
 clear
 nano GC_content.sh
 chmod +x GC_content.sh
@@ -219,11 +219,11 @@ cd phanice
 ls
 cd phanice.fna
 nano  phanice.fna
-echo "A=39286731" >> phanice.fna
+echo "A=1921361" >> phanice.fna
 cat phanice.fna
-echo "G=27981802" >> phanice.fna
+echo "G=1920642" >> phanice.fna
 cat phanice.fna
-echo "T=39361954" >> phanice.fna
+echo "T=1921235" >> phanice.fna
 cat phanice.fna
-echo "C=27903259" >> phanice.fna
+echo "C=1920335" >> phanice.fna
 cat phanice.fna
